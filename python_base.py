@@ -74,8 +74,10 @@ def fab3(max):
 for x in fab3(5):
     print(x)
 
-a=lambda x,y,z:x+y+3
+a=lambda x,y,z:x+y+z
 print(a(1,2,3))
+print(a(3,4,5))
+
 
 
 
