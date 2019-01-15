@@ -42,6 +42,11 @@ print(complex(1,2))
 #数字的表达式操作符
 # yield 5                  生成器生成
 # lambda args:expression   生成匿名函数
+# x if y else z            三元表达式
+# x and y, x or y, not x   逻辑与，逻辑或，逻辑非
+# x is in y, x is not in y  成员对象测试
+# x is y, x is not y        对象实体测试
+
 
 #斐波那契数列
 # def fab1(max):
@@ -64,19 +69,24 @@ print(complex(1,2))
 # for x in fab2(5):
 #     print(x)
 
-def fab3(max):
-    n,a,b=0,0,1
-    while(n<max):
-        yield b
-        a,b=b,a+b
-        n=n+1
+# def fab3(max):
+#     n,a,b=0,0,1
+#     while(n<max):
+#         yield b
+#         a,b=b,a+b
+#         n=n+1
+#
+# for x in fab3(5):
+#     print(x)
+#
+# a=lambda x,y,z:x+y+z
+# print(a(1,2,3))
+# print(a(3,4,5))
+# print(1 if False else 10)
 
-for x in fab3(5):
-    print(x)
 
-a=lambda x,y,z:x+y+z
-print(a(1,2,3))
-print(a(3,4,5))
+
+
 
 
 
