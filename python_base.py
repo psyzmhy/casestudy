@@ -1,5 +1,6 @@
 # _*_ coding: utf-8 _*_
 import os
+import sys
 from fractions import Fraction
 
 # dir(obj) #用来查询一个类或者对象所有属性
@@ -188,15 +189,15 @@ print(".".join(["a","b","c"]))
 str1="abcdbdfh"
 # print(str1.upper())
 # print(str1.lower())
-# print(str1.swapcase())
-# print(str1.capitalize())
-# print(str1.title())
-# print(str1.rjust(20))
-# print(str1.ljust(20))
-# print(str1.center(20))
-# print(str1.zfill(20))
+# print(str1.swapcase())       #切换大小写
+# print(str1.capitalize())     #句子首字母大写
+# print(str1.title())          #句子每个单词首字母大写
+# print(str1.rjust(20))       #右对齐
+# print(str1.ljust(20))       #左对齐
+# print(str1.center(20))中心对齐
+# print(str1.zfill(20))         #左边填0
 # print(str1.find("b",0,10))
-# print(str1.rfind("b"))
+# print(str1.rfind("b"))         #寻找字母
 # print(str1.count("b"))
 # #上述所有都可以用index代替，不同的index会抛出异常，find返回-1
 # print(str1.replace("b","s"))
@@ -204,14 +205,14 @@ str1="abcdbdfh"
 # print(str1.strip("a"))   #删除开头结尾处的a字符
 # print(str1.lstrip("ab"))
 # print(str1.rstrip("fh"))
-# print(str1.startswith("a"))
+# print(str1.startswith("a"))  #判断是否由a开始
 # print(str1.endswith("end"))
 
-print(str1.isalnum())
-print(str1.isalpha())
-print(str1.isdigit())
-print(str1.islower())
-print(str1.isupper())
+# print(str1.isalnum())
+# print(str1.isalpha())
+# print(str1.isdigit())
+# print(str1.islower())
+# print(str1.isupper())
 
 #---三重引号编写多行字符串块
 mantra="""
@@ -233,6 +234,17 @@ print(name)
 name="wang" \
     "hong"
 print(name)
+
+#python中的字符串格式化调用方法
+#普通调用
+print("{0} and {1} and {2}".format("blue","read","yellow"))     #基于位置的调用
+print(("{motto} and {0}").format("blue",motto="red"))
+
+#基于key的调用
+print("{config[spam]},{sys.platform}".format(sys=sys,config={'spam':'laptop'}))
+
+
+
 
 
 
