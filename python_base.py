@@ -277,9 +277,6 @@ a=[1,2,3,4,5,6,7]
 del a[::2]  #删除偶数位
 print(a)
 
-
-
-
 # #排序相关知识
 # #排序基础：sorted和list.sort都可以用来排序，不过前者更直接，对所有可迭代序列都有效，而后者只被定义在list中且原来的list会被改变
 # #key函数：key参数可以用来指定一个函数，此函数在每个元素比较之前调用，此函数只有一个参数且返回一个值来进行比较
@@ -341,6 +338,63 @@ print(a)
 #
 # #map的判断语句
 # print(list(map(lambda x:x>2,test_x)))
+
+#常用字典常量和操作
+D={}
+D=dict.fromkeys(["s","q"],8)    #创建字典
+print(D)
+D1=dict(s=9,q=8)
+print(D)                        #创建字典
+D=dict([("s",9),("q",8)])
+print(D)                        #创建字典
+D=dict(zip(["name","age","city"],["tom",12]))    #将字典的key和值合并在一起，将两个列表合并到一起
+print(D)
+print(D.keys())                    #字典的键
+print(D.values())                  #字典的值
+print(D.items())#字典的键值对
+
+#D.get(key,default)                #获取字典的某个键值，当键不存在的时候返回默认值
+print(D.get("name","shanghai"))
+
+D.update(D1)                       #合并字典D1的内容到D里，如果存在相同的键值D1的内容会覆盖D的
+print(D)
+
+#D.pop(key,default)
+print(D.pop("city","none"))           #删除字典中key的键值对，如果没有则返回default的值
+print(D)
+
+#D.pop(item)                         #删除字典中随机的一个键值对，如果字典已空，返回keyerror异常
+print(D.popitem())
+print(D)
+
+#del(D(key))                        删除字典中的键值对
+#del(D)                             删除字典
+#if key in D  if key not in D       判断字典中key是否存在
+
+if "name" in D:                     #测试字典键是否存在
+    print(True)
+if "name" not in D:
+    print(False)
+
+#字典注意事项，1/对于字典新索引数值会增加一项，2/字典值不一定是字符串，也可以是任何不可变的对象
+#不可变对象，调用对象自身的任何方法，也不会改变自身的任何内容，这些方法会创建新的对象并返回
+#字符串，tuple，整数都是不可变对象，dict，set，list都是可变对象
+
+#字典解析
+D={k:8 for k in ["s","d"]}
+print(D)
+D={k:v for(k,v) in zip(["name","age"],["tom",10])}
+print(D)
+
+#元组和列表的唯一区别是列表是可变对象，元组是不可变对象
+a=[1,2,3]  #a[0]=2,OK
+a=(1,2,3)  #a[0]=2,Error
+a=[(1,2)]  #a[0,1]=2,Error
+a=([1,2])  #a[0,1]=2,OK
+
+
+
+
 
 
 
