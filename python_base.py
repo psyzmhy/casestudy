@@ -392,7 +392,50 @@ a=(1,2,3)  #a[0]=2,Error
 a=[(1,2)]  #a[0,1]=2,Error
 a=([1,2])  #a[0,1]=2,OK
 
+#--元组的特殊语法：逗号和圆括号
+D=(12)             #D=12
+D=(12,)            #D=(12,)
 
+#文件基本操作
+# output=open("file.txt","rw")     #打开输出文件，用于写
+# input=open("file.txt","r")       #打开输入文件，用于读
+# fp=read([size])                  #size为读取的长度，以byte为单位
+# fp=readline([size])              #读一行，如果定义了size，返回的只是一行的一部分
+# fp=readlines([size])             #返回文件的每一行，作为一个list.size代表的是读取的总长度
+# fp.readable()                    #文件是否可读
+# fp.write(str)                    #向文件中写入
+# fp.writelines(seq)               #把seq内容一次行写入，多行写入
+# fp.writable()                    #文件是否可写
+# fp.close()                       #关闭文件
+# fp.flush()                       #将缓存当中的内容写入硬盘
+# for line in open("data/data.txt"):
+#     print(line)                   #适用于读取大的文件
+
+with open("data/data.txt") as file:
+    print(file.readline())        #使用with语句，可以保证文件关闭
+
+# with open("data/data.txt") as file:
+#     print(file.readlines())       #一次性读入文件所有语句
+
+"""
+with语句的作用：在读文件和写文件的时候，如果用open就必须用close来关闭文件。
+但是在文件出现IOerror的时候，就没有办法及时关闭。这个时候在读写文件的时候，就需要用try，except
+with语句解决了这个问题，使用with语句不用考虑到自己去关闭文件
+读一般有四种方法：
+read()读取较小的文件
+read(size)读取较大文件中一部分
+readline()读取一行
+readlines()读取所有行
+"""
+
+#其他
+#python中的真假定义：1。不为0则为真，否则为假 2。不为空则为真，否则为假
+
+"""
+语法和语句部分
+语法和语句部分
+语法和语句部分
+"""
 
 
 
