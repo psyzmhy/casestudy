@@ -41,18 +41,18 @@ class Solution():
 
         bucketList= [[0 for col in range(bucketSize)] for row in range(bucketCount)]
         for i in range(length):
-            bucketList[(list[i]-minValue)//bucketSize].append(list[i])
+            bucketList[(list[i] - minValue) // bucketSize].append(list[i])
 
         for i in range(len(bucketList)):
             insertSolution.insert_sort(bucketList[i])
             for j in range(len(bucketList[i])):
-                if bucketList[i][j]!=0:
+                if bucketList[i][j] != 0:
                     newList.append(bucketList[i][j])
 
         return newList,bucketCount
 
 
-solution=Solution()
-list=[10,3,8,7,9,100,85,12,31,35,102]
+solution = Solution()
+list = [10,3,8,7,9,100,85,12,31,35,102]
 print(solution.bucket_sort(list))
 
